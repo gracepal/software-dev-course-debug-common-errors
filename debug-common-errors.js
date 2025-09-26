@@ -87,3 +87,21 @@ console.log(isPrime(7)); // Expected true but gets false
 //     because the range of (let i = 2; i < num; i++) is 2~(num-1) since i < num
 // Fix is to update the comparison operator to <= instead of <
 //     or update the end operand to (num + 1)
+
+// ************************************************************
+// Sample Output for Reference
+// ************************************************************
+
+// Program A
+// ---------
+// Welcome to the bootcamp
+
+// Program B
+// ---------
+// 4
+// 8
+// 16
+
+// Program C
+// ---------
+// true
