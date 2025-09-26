@@ -72,21 +72,36 @@ console.log('\nProgram C');
 console.log('---------');
 function isPrime(num) {
   if (num < 2) return false;
-  for (let i = 2; i <= num; i++) {
+  for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return true; // Supposed to indicate num is NOT prime
+      return false; // divisor found, num is NOT prime
     }
   }
-  return false; // Supposed to indicate num IS prime
+  return true; // divisor NOT found, num IS prime
 }
 
 console.log(isPrime(7)); // Expected true but gets false
+for (let num = 0; num < 10; num++) {
+  console.log(num, isPrime(num));
+}
 
 // What’s Wrong?
+
+// This is wrong ❌
 // Logic error, because the number we are checking will never get checked in the loop
-//     because the range of (let i = 2; i < num; i++) is 2~(num-1) since i < num
+//   because the range of (let i = 2; i < num; i++) is 2~(num-1) since i < num
 // Fix is to update the comparison operator to <= instead of <
-//     or update the end operand to (num + 1)
+//   or update the end operand to (num + 1)
+
+// Correction ✅
+// Logic error. Did not read the code logic properly and assumed the simplest conclusion
+//   without checking solution with additional inputs.
+// The actual logic is, function takes in a number to check if it is prime,
+//   and first checks if input is less than 2, then it is not prime (0 and 1 are not prime),
+//   then attempts to check every num between 2 and input-1 (because we're looking for divisors),
+//   and if ever there is a num in between that evenly divides into input number,
+//   then that is not a prime (prime can only be divided by 1 and itself),
+//   otherwise it is a prime (ex. with 7, we check divisors 2~6, and if none divides 7 evenly)
 
 // ************************************************************
 // Sample Output for Reference
