@@ -81,8 +81,10 @@ function isPrime(num) {
 }
 
 console.log(isPrime(7)); // Expected true but gets false
-for (let num = 0; num < 10; num++) {
-  console.log(num, isPrime(num));
+
+console.log('\nTesting inputs between 0 and 11:');
+for (let num = 0; num <= 11; num++) {
+  console.log(`${num} is prime: ${isPrime(num)}`);
 }
 
 // What’s Wrong?
@@ -107,6 +109,8 @@ for (let num = 0; num < 10; num++) {
 // Sample Output for Reference
 // ************************************************************
 
+// ➜  software-dev-course-debug-common-errors git:(main) node debug-common-errors.js
+
 // Program A
 // ---------
 // Welcome to the bootcamp
@@ -120,3 +124,17 @@ for (let num = 0; num < 10; num++) {
 // Program C
 // ---------
 // true
+
+// Testing inputs between 0 and 11:
+// 0 is prime: false
+// 1 is prime: false
+// 2 is prime: true
+// 3 is prime: true
+// 4 is prime: false
+// 5 is prime: true
+// 6 is prime: false
+// 7 is prime: true
+// 8 is prime: false
+// 9 is prime: false
+// 10 is prime: false
+// 11 is prime: true
